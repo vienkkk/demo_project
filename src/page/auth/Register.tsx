@@ -11,7 +11,7 @@ function Register() {
   });
 
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -63,7 +63,7 @@ function Register() {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "auto" }}>
+    <div className="register-container">
       <h2>Đăng ký</h2>
       <form onSubmit={handleSubmit}>
         <input
