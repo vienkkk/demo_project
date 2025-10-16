@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectManager from '../../../component/project/ProjectManager'
-import'../../../component/style/ProjectStyles.module.css'
+import styles from '../../../component/style/ProjectStyles.module.css'
 import Navbar from '../../../component/nav/Navbar'
 import Footer from '../../../component/footer/Footer'
 
