@@ -1,14 +1,16 @@
 // src/component/project/ProjectDetail.tsx
 
 import React from 'react';
-import styles from '../style/ProjectDetail.module.css'; // Sẽ tạo file CSS này ở bước sau
-import img from '../../component/img/projectDetail/img.png'
+import styles from '../style/ProjectStyles.module.css';
+// SỬA LỖI: Import hình ảnh từ thư mục 'src/assets'
+import projectImage from '../../component/img/projectDetail/img.png'; 
 
 // Dữ liệu mẫu
 const project = {
   name: 'Xây dựng website thương mại điện tử',
   description: 'Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng, thanh toán và quản lý sản phẩm.',
-  imageUrl: img // Thay bằng URL ảnh của bạn
+  // SỬA LỖI: Sử dụng biến đã import
+  imageUrl: projectImage 
 };
 
 const members = [
@@ -39,9 +41,8 @@ const ProjectDetail = () => {
         </div>
         <div className={styles.projectMeta}>
             <div className={styles.projectImage}>
-                 {/* Bạn có thể dùng thẻ <img> ở đây */}
+                 {/* SỬA LỖI: Xóa thẻ <p> không cần thiết */}
                  <img src={project.imageUrl} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '5px' }} />
-                 <p style={{textAlign: 'center', paddingTop: '40px'}}>Project Image</p>
             </div>
             <div className={styles.members}>
                 <div className={styles.membersHeader}>
