@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import styles from '../style/ProjectStyles.module.css'; // Import styles
+import styles from '../style/ProjectManager.module.css'; // Import styles
 
 // Dữ liệu mẫu (Giữ nguyên)
 const initialProjects = [

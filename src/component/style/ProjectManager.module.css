@@ -1,0 +1,165 @@
+/* src/component/project/ProjectManager.module.css */
+
+/* ================== Card & Layout ================== */
+.card {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.pageTitle {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 28px;
+    color: #343a40;
+}
+
+/* ================== Controls: Search & Add Button ================== */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.addButton {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.addButton:hover {
+    background-color: #0b5ed7;
+}
+
+.searchInput {
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    width: 320px;
+    font-size: 14px;
+}
+
+/* ================== Project Table ================== */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table thead {
+    background-color: #f8f9fa; /* Lighter head background */
+}
+
+.table th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+    color: #495057;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+    color: #212529;
+}
+
+/* Center align the "Hành Động" column */
+.actionHeader {
+    text-align: center;
+}
+
+.actionCell {
+    text-align: center;
+}
+
+/* ================== Action Buttons (Edit, Delete, Detail) ================== */
+.btnGroup {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btnAction {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btnAction:hover {
+    opacity: 0.85;
+}
+
+.btnEdit {
+    background-color: #ffc107; /* Yellow */
+    color: #212529;
+}
+
+.btnDelete {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+.btnDetail {
+    background-color: #0d6efd; /* Blue */
+    color: white;
+}
+
+/* ================== Pagination ================== */
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 8px;
+}
+
+.pageButton {
+    border: 1px solid #dee2e6;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 40px;
+    text-align: center;
+    font-weight: 500;
+    background-color: white;
+    color: #0d6efd;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pageButton:hover:not(.disabled) {
+    background-color: #e9ecef;
+}
+
+.pageButton.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+.pageButton.disabled {
+    color: #6c757d;
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.pageEllipsis {
+    color: #6c757d;
+    padding: 8px 10px;
+    cursor: default;
+}

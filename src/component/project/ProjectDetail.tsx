@@ -1,7 +1,7 @@
 // src/component/project/ProjectDetail.tsx
 
 import React from 'react';
-import styles from '../style/ProjectStyles.module.css';
+import styles from '../style/ProjectDetail.module.css';
 // SỬA LỖI: Import hình ảnh từ thư mục 'src/assets'
 import projectImage from '../../component/img/projectDetail/img.png'; 
 
