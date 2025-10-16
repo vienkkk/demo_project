@@ -2,12 +2,13 @@
 
 import React from 'react';
 import styles from '../style/ProjectDetail.module.css'; // Sẽ tạo file CSS này ở bước sau
+import img from '../../component/img/projectDetail/img.png'
 
 // Dữ liệu mẫu
 const project = {
   name: 'Xây dựng website thương mại điện tử',
   description: 'Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng, thanh toán và quản lý sản phẩm.',
-  imageUrl: 'https://i.imgur.com/example.png' // Thay bằng URL ảnh của bạn
+  imageUrl: img // Thay bằng URL ảnh của bạn
 };
 
 const members = [
@@ -39,6 +40,7 @@ const ProjectDetail = () => {
         <div className={styles.projectMeta}>
             <div className={styles.projectImage}>
                  {/* Bạn có thể dùng thẻ <img> ở đây */}
+                 <img src={project.imageUrl} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '5px' }} />
                  <p style={{textAlign: 'center', paddingTop: '40px'}}>Project Image</p>
             </div>
             <div className={styles.members}>
