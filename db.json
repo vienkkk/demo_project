@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullName": "An Nguyễn",
+      "email": "nguyenquangan@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "fullName": "Bách Nguyễn",
+      "email": "bachnguyen@gmail.com",
+      "password": "123"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "taskName": "Soạn thảo đề cương dự án",
+      "assigneeId": 1,
+      "projectId": 1,
+      "assignDate": "2025-03-24",
+      "dueDate": "2025-03-26",
+      "priority": "Thấp",
+      "progress": "Đúng tiến độ",
+      "status": "To do"
+    },
+    {
+      "id": "2",
+      "taskName": "Lên lịch họp kickoff",
+      "assigneeId": 1,
+      "projectId": 1,
+      "assignDate": "2025-03-25",
+      "dueDate": "2025-03-28",
+      "priority": "Trung bình",
+      "progress": "Có rủi ro",
+      "status": "In Progress"
+    },
+    {
+      "id": "3",
+      "taskName": "Thiết kế giao diện trang chủ",
+      "assigneeId": 2,
+      "projectId": 1,
+      "assignDate": "2025-03-27",
+      "dueDate": "2025-03-29",
+      "priority": "Cao",
+      "progress": "Trễ hạn",
+      "status": "To do"
+    }
+  ],
+  "projects": [
+    {
+      "id": "2",
+      "projectName": "Phát triển ứng dụng di động",
+      "description": "Xây dựng một ứng dụng di động cho cả hai nền tảng iOS và Android để quản lý công việc hàng ngày.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231718/samples/ecommerce/accessories-bag.jpg",
+      "members": [
+        {
+          "userId": 2,
+          "role": "Project owner"
+        }
+      ]
+    },
+    {
+      "id": "1e88",
+      "projectName": "hfhg",
+      "description": "ưer",
+      "image": "https://th.bing.com/th/id/R.232d0271d4d694c5ab7865b596cefad4?rik=d00fGgdIb71x8g&pid=ImgRaw&r=0",
+      "members": []
+    },
+    {
+      "id": "3aca",
+      "projectName": "Phát triển ứng dụng di động",
+      "description": "fefwewe",
+      "image": "ăerewr",
+      "members": []
+    }
+  ]
+}
