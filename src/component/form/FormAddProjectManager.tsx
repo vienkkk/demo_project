@@ -4,7 +4,6 @@ import axios from 'axios';
 
 // --- STYLE OBJECTS ---
 const styles = {
-    // ✨ SỬA LỖI: Đổi tên từ 'modalOverlay' thành 'overlay'
     overlay: {
       position: 'fixed',
       top: 0,
@@ -14,7 +13,7 @@ const styles = {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center', // Căn modal ra giữa màn hình
+      alignItems: 'center',
       zIndex: 1000,
     },
     modalContent: {
@@ -25,7 +24,6 @@ const styles = {
       width: '480px',
       maxWidth: '95%',
     },
-    // ... các style khác giữ nguyên
     modalHeader: {
       display: 'flex',
       justifyContent: 'space-between',
@@ -106,7 +104,6 @@ const styles = {
 };
 
 function FormProjectModal({ onClose, onSave, project, existingProjects }) {
-    // ... Phần logic của component không cần thay đổi ...
     const [formData, setFormData] = useState({
         projectName: '',
         description: '',
@@ -174,7 +171,12 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
           if (isEditing) {
             response = await axios.put(`http://localhost:3001/projects/${project.id}`, dataToSave);
           } else {
-            response = await axios.post('http://localhost:3001/projects', dataToSave);
+            const numericIds = existingProjects
+                .map(p => parseInt(p.id, 10))
+                .filter(id => !isNaN(id));
+            const maxId = numericIds.length > 0 ? Math.max(...numericIds) : 0;
+            const newProject = { ...dataToSave, id: (maxId + 1).toString() };
+            response = await axios.post('http://localhost:3001/projects', newProject);
           }
           onSave(response.data);
           onClose();
@@ -194,13 +196,10 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
         ...(errors[fieldName] && { borderColor: '#ef4444' }),
       });
     
-
-    // ✨ JSX này giờ sẽ gọi đúng `styles.overlay`
     return (
         <div style={styles.overlay}>
             <div style={styles.modalContent}>
                 <form onSubmit={handleSubmit} noValidate>
-                    {/* ... JSX bên trong form không đổi ... */}
                     <div style={styles.modalHeader}>
             <h2 style={styles.h2}>{isEditing ? 'Sửa Dự Án' : 'Thêm Dự Án Mới'}</h2>
             <button type="button" style={styles.closeButton} onClick={onClose}>&times;</button>

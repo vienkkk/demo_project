@@ -7,6 +7,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'; // Thêm Navigate
 import ProjectManagerGroup from './page/manager/project/ProjectManagerGroup';
 import ProjectDetailPage from './page/manager/project/ProjectDetailPage';
 
+
 function App() {
   return (
     <>
@@ -18,7 +19,7 @@ function App() {
         <Route path='/project-manager' element={<ProjectManagerGroup />} />
         
         {/* ✨ SỬA LỖI 2: Thêm tham số :projectId vào route */}
-        <Route path='/project-detail/:projectId' element={<ProjectDetailPage />} /> 
+        <Route path='/project-detail' element={<ProjectDetailPage/>} /> 
       </Routes>
     </>
   );
