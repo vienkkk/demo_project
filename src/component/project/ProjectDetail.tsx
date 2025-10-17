@@ -1,15 +1,9 @@
-// src/component/project/ProjectDetail.tsx
-
 import React from 'react';
 import styles from '../style/ProjectDetail.module.css';
-// SỬA LỖI: Import hình ảnh từ thư mục 'src/assets'
 import projectImage from '../../component/img/projectDetail/img.png'; 
-
-// Dữ liệu mẫu
 const project = {
   name: 'Xây dựng website thương mại điện tử',
   description: 'Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng, thanh toán và quản lý sản phẩm.',
-  // SỬA LỖI: Sử dụng biến đã import
   imageUrl: projectImage 
 };
 
@@ -41,7 +35,7 @@ const ProjectDetail = () => {
         </div>
         <div className={styles.projectMeta}>
             <div className={styles.projectImage}>
-                 {/* SỬA LỖI: Xóa thẻ <p> không cần thiết */}
+                
                  <img src={project.imageUrl} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '5px' }} />
             </div>
             <div className={styles.members}>

@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import styles from '../style/ProjectManager.module.css'; // Import styles
-
-// Dữ liệu mẫu (Giữ nguyên)
+import styles from '../style/ProjectManager.module.css';
+import AddProjectModal from '../form/AddProjectManager';
 const initialProjects = [
   { id: 1, name: 'Xây dựng website thương mại điện tử' },
   { id: 2, name: 'Phát triển ứng dụng di động' },
@@ -15,8 +14,6 @@ const initialProjects = [
 ];
 
 const PROJECTS_PER_PAGE = 5;
-
-// Component con cho Nút Hành Động
 const ActionButtons = ({ projectId }) => {
   const handleAction = (action) => console.log(`${action} project ${projectId}`);
   
@@ -48,7 +45,7 @@ const ProjectManager = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   
-  // Logic lọc và phân trang (Giữ nguyên)
+  // Logic lọc và phân trang
   const filteredProjects = useMemo(() => {
     return initialProjects.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
   }, [searchTerm]);
@@ -103,7 +100,7 @@ const ProjectManager = () => {
       {/* Controls Section */}
       <div className={styles.controls}>
         <button 
-          onClick={() => console.log("+ Thêm Dự Án clicked!")} 
+          onClick={AddProjectModal} 
           className={styles.addButton}
         >
           + Thêm Dự Án
