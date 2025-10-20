@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "fullName": "An Nguyễn",
       "email": "nguyenquangan@gmail.com",
       "password": "123"
     },
     {
-      "id": 2,
+      "id": "2",
       "fullName": "Bách Nguyễn",
       "email": "bachnguyen@gmail.com",
       "password": "123"
@@ -15,18 +15,7 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "taskName": "Soạn thảo đề cương dự án",
-      "assigneeId": 1,
-      "projectId": 1,
-      "assignDate": "2025-03-24",
-      "dueDate": "2025-03-26",
-      "priority": "Thấp",
-      "progress": "Đúng tiến độ",
-      "status": "To do"
-    },
-    {
-      "id": 2,
+      "id": "2",
       "taskName": "Lên lịch họp kickoff",
       "assigneeId": 1,
       "projectId": 1,
@@ -37,7 +26,7 @@
       "status": "In Progress"
     },
     {
-      "id": 3,
+      "id": "3",
       "taskName": "Thiết kế giao diện trang chủ",
       "assigneeId": 2,
       "projectId": 1,
@@ -46,11 +35,22 @@
       "priority": "Cao",
       "progress": "Trễ hạn",
       "status": "To do"
+    },
+    {
+      "id": "e23f",
+      "taskName": "ve",
+      "assigneeId": 1,
+      "status": "To do",
+      "assignDate": "2025-10-20",
+      "dueDate": "2025-10-25",
+      "priority": "Trung bình",
+      "progress": "Có rủi ro",
+      "projectId": 1
     }
   ],
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "projectName": "Xây dựng website thương mại điện tử",
       "description": "Dự án nhằm phát triển một nền tảng thương mại điện tử...",
       "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1758845173/cld-sample-5.jpg",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "projectName": "Phát triển ứng dụng di động",
       "description": "Xây dựng một ứng dụng di động cho cả hai nền tảng...",
       "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231718/samples/ecommerce/accessories-bag.jpg",
