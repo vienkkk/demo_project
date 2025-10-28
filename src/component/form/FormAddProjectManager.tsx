@@ -17,10 +17,8 @@ const styles = {
       zIndex: 1000,
     },
     modalContent: {
-      background: 'white',
       padding: '20px',
       borderRadius: '8px',
-      boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
       width: '480px',
       maxWidth: '95%',
     },

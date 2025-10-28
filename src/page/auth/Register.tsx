@@ -138,8 +138,6 @@ function Register() {
         )}
 
         {errors.form && <span className="error">{errors.form}</span>}
-
-        {/* 3. Vẫn render state 'success' (giờ là JSX) */}
         {success && <div className="success">{success}</div>}
 
         <button type="submit">Đăng ký</button>
