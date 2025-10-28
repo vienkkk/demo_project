@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Import axios
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -9,7 +10,8 @@ function Login() {
   });
 
   const [errors, setErrors] = useState({});
-  const [toast, setToast] = useState("");
+  // 1. Thay đổi state để chấp nhận JSX
+  const [toast, setToast] = useState<React.ReactNode>("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -23,33 +25,61 @@ function Login() {
     return /\S+@\S+\.\S+/.test(email);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
-    // Kiểm tra bỏ trống
+    // (Validation logic giữ nguyên)
     if (!formData.email.trim()) {
       newErrors.email = "Vui lòng nhập email";
     } else if (!isValidEmail(formData.email)) {
       newErrors.email = "Email không hợp lệ";
     }
-
     if (!formData.password.trim()) {
       newErrors.password = "Vui lòng nhập mật khẩu";
     }
-
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
 
-    // Đăng nhập thành công
-    console.log("Thông tin đăng nhập:", formData);
-    setToast("Đăng nhập thành công!");
+    try {
+      const response = await axios.get("http://localhost:3001/users");
+      const users = response.data;
+      const foundUser = users.find(
+        (user) =>
+          user.email === formData.email && user.password === formData.password
+      );
 
-    setTimeout(() => {
-      setToast("");
-    }, 2000);
+      if (foundUser) {
+        // --- 2. THAY ĐỔI Ở ĐÂY ---
+        // Hiển thị GIF thay vì text
+        setToast(
+          <>
+            <img 
+              src="https://cdn.pixabay.com/animation/2025/06/14/19/01/19-01-51-889_512.gif" 
+              alt="Đăng nhập thành công" 
+              style={{ width: '60px', height: '60px', display: 'block', margin: 'auto' }}
+            />
+          </>
+        );
+        // --- KẾT THÚC THAY ĐỔI ---
+
+        setTimeout(() => {
+          setToast("");
+          navigate("/project-manager"); // Chuyển đến trang quản lý dự án
+        }, 2000);
+      } else {
+        setErrors({
+          form: "Email hoặc mật khẩu không đúng. Vui lòng thử lại.",
+        });
+      }
+    } catch (error) {
+      console.error("Lỗi đăng nhập:", error);
+      setErrors({
+        form: "Đã xảy ra lỗi. Không thể kết nối đến máy chủ.",
+      });
+    }
   };
 
   return (
@@ -76,16 +106,24 @@ function Login() {
           placeholder="Mật khẩu"
         />
         {errors.password && <span className="error">{errors.password}</span>}
+        
+        {errors.form && <span className="error">{errors.form}</span>}
+
 
         <button type="submit">Đăng nhập</button>
         <p>
           Chưa có tài khoản?{" "}
-          <span className="link" onClick={() => navigate("/register")}>
+          <span
+            className="link"
+            onClick={() => navigate("/register")}
+            style={{ cursor: "pointer" }} 
+          >
             Đăng ký
           </span>
         </p>
       </form>
 
+      {/* 3. Vẫn render state 'toast' (giờ là JSX) */}
       {toast && <div className="toast">{toast}</div>}
     </div>
   );

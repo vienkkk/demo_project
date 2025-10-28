@@ -77,21 +77,18 @@ p {
   margin-bottom: 8px;
   text-align: left;
 }
-
 .toast {
   position: fixed;
-  background-color: #007bff;
+  background-color: #ffffff;
   color: white;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   animation: fadeInOut 2s ease-in-out;
-  top: 5px;
+  top: 20px;
   right: 20px;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 10px; 
+  border-radius: 8px;
   z-index: 999;
   font-size: 14px;
-  height: 20px;
-  width: 80px;
 }
 
 @keyframes fadeInOut {

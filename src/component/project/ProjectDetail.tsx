@@ -1,5 +1,3 @@
-// src/component/project/ProjectDetail.tsx
-
 import React, { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -37,7 +35,7 @@ const ProjectDetail = () => {
       } catch (err) {
         setError(err.message);
       } finally {
-        setIsLoading(false); // Kết thúc loading ở đây
+        setIsLoading(false); 
       }
     };
     fetchData();
@@ -94,20 +92,14 @@ const ProjectDetail = () => {
         <p>Project not found.</p>
       </div>
     );
-
-  // --- Data Grouping (sử dụng filteredTasks đã tính toán ở trên) ---
   const tasksByStatus = {
     todo: filteredTasks.filter((t) => t.status === "To do"),
     inProgress: filteredTasks.filter((t) => t.status === "In Progress"),
     pending: filteredTasks.filter((t) => t.status === "Pending"),
     done: filteredTasks.filter((t) => t.status === "Done"),
   };
-
-  // --- Render Function ---
   return (
     <div className={styles.container}>
-      {/* Project Header */}
-      {/* ... (Phần JSX của header giữ nguyên) ... */}
       <div className={styles.projectHeader}>
         <div className={styles.projectInfo}>
           <h1>{project.projectName}</h1>
@@ -122,7 +114,7 @@ const ProjectDetail = () => {
         <div className={styles.projectMeta}>
           <div className={styles.projectImage}>
             <img
-              src={imgHeader}
+              src={imgHeader} 
               alt={project.projectName}
               style={{
                 width: "100%",
@@ -157,10 +149,7 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
-
-      {/* Task List */}
       <div className={styles.taskListContainer}>
-        {/* ... (Phần JSX của task list giữ nguyên, sử dụng tasksByStatus) ... */}
         <div className={styles.taskListHeader}>
           <h2>Danh Sách Nhiệm Vụ</h2>
           <div className={styles.taskControls}>
@@ -188,7 +177,6 @@ const ProjectDetail = () => {
             </tr>
           </thead>
           <tbody>
-            {/* To do */}
             <tr>
               <td colSpan={7} className={styles.taskSection}>
                 ▼ To do ({tasksByStatus.todo.length})

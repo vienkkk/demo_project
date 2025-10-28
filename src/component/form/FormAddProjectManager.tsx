@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// --- STYLE OBJECTS ---
+// --- STYLE OBJECTS (Giữ nguyên) ---
 const styles = {
     overlay: {
       position: 'fixed',
@@ -102,12 +102,14 @@ const styles = {
       backgroundColor: '#0d6efd',
     },
 };
+// --- KẾT THÚC STYLE ---
+
 
 function FormProjectModal({ onClose, onSave, project, existingProjects }) {
     const [formData, setFormData] = useState({
         projectName: '',
         description: '',
-        image: '',
+        image: '', // Sẽ lưu URL Base64
       });
       const [errors, setErrors] = useState({});
       const isEditing = !!project;
@@ -122,11 +124,30 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
         }
       }, [project, isEditing]);
     
+      // Hàm handleChange cho các trường text và textarea
       const handleChange = (e) => {
         const { id, value } = e.target;
         setFormData(prev => ({ ...prev, [id]: value }));
         if (errors[id]) {
           setErrors(prev => ({ ...prev, [id]: null }));
+        }
+      };
+      
+      // --- MỚI: Hàm xử lý khi chọn file ---
+      const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            // Chuyển file thành Base64 data URL và lưu vào state
+            setFormData(prev => ({ ...prev, image: reader.result as string }));
+          };
+          reader.readAsDataURL(file);
+        } else {
+          // Nếu người dùng hủy chọn file, xóa ảnh (nếu đang thêm mới)
+          if (!isEditing) {
+            setFormData(prev => ({ ...prev, image: '' }));
+          }
         }
       };
     
@@ -161,10 +182,11 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
     
         try {
           let response;
+          // Dữ liệu image bây giờ là chuỗi Base64
           const dataToSave = {
             projectName: formData.projectName,
             description: formData.description,
-            image: formData.image,
+            image: formData.image, // Lưu chuỗi Base64
             members: isEditing ? project.members : [],
           };
     
@@ -205,7 +227,9 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
             <button type="button" style={styles.closeButton} onClick={onClose}>&times;</button>
           </div>
 
+          {/* --- THÂN MODAL ĐÃ SẮP XẾP LẠI VÀ THAY ĐỔI --- */}
           <div style={styles.modalBody}>
+            {/* 1. Tên dự án */}
             <div style={styles.formGroup}>
               <label htmlFor="projectName" style={styles.label}>Tên dự án</label>
               <input
@@ -217,7 +241,36 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
               />
               {errors.projectName && <p style={styles.errorMessage}>{errors.projectName}</p>}
             </div>
+
+            {/* 2. Ảnh dự án (ĐÃ THAY ĐỔI) */}
+            <div style={styles.formGroup}>
+              <label htmlFor="image-file" style={styles.label}>Ảnh dự án</label>
+              <input
+                type="file"
+                id="image-file" // Đổi ID để tránh xung đột với handleChange
+                onChange={handleFileChange} // Dùng hàm xử lý file mới
+                style={styles.input}
+                accept="image/*" // Chỉ chấp nhận file ảnh
+              />
+              {/* Xem trước ảnh nếu có */}
+              {formData.image && (
+                <div style={{ marginTop: '10px' }}>
+                  <label style={{...styles.label, marginBottom: '5px'}}>Xem trước:</label>
+                  <img 
+                    src={formData.image} 
+                    alt="Xem trước" 
+                    style={{ 
+                      width: '100%', 
+                      maxWidth: '200px', 
+                      borderRadius: '4px', 
+                      border: '1px solid #ddd' 
+                    }} 
+                  />
+                </div>
+              )}
+            </div>
             
+            {/* 3. Mô tả */}
             <div style={styles.formGroup}>
               <label htmlFor="description" style={styles.label}>Mô tả</label>
               <textarea
@@ -229,18 +282,9 @@ function FormProjectModal({ onClose, onSave, project, existingProjects }) {
               ></textarea>
               {errors.description && <p style={styles.errorMessage}>{errors.description}</p>}
             </div>
-
-            <div style={styles.formGroup}>
-              <label htmlFor="image" style={styles.label}>URL Hình ảnh</label>
-              <input
-                type="text"
-                id="image"
-                value={formData.image}
-                onChange={handleChange}
-                style={inputStyle('image')}
-              />
-            </div>
           </div>
+          {/* --- KẾT THÚC THÂN MODAL --- */}
+
 
           <div style={styles.modalFooter}>
             <button type="button" style={{ ...styles.button, ...styles.buttonSecondary }} onClick={onClose}>Huỷ</button>
