@@ -5,32 +5,35 @@
       "fullName": "An Nguyễn",
       "email": "nguyenquangan@gmail.com",
       "password": "123",
-      "role":"Project owner"
+      "role": "Project owner"
     },
     {
       "id": "2",
       "fullName": "Bách Nguyễn",
       "email": "bachnguyen@gmail.com",
       "password": "123",
-      "role":"member"
+      "role": "member"
     },
     {
-      "id": "a215",
-      "fullName": "Mai Sơn Việt",
-      "email": "thaiphong099@gmail.com",
-      "password": "123456"
+      "id": "3",
+      "fullName": "Chi Trần",
+      "email": "chitran@gmail.com",
+      "password": "123",
+      "role": "member"
     },
     {
-      "id": "ea94",
-      "fullName": "Mai Sơn Việt",
-      "email": "thaiphong0991@gmail.com",
-      "password": "123456"
+      "id": "4",
+      "fullName": "Dũng Lê",
+      "email": "dungle@gmail.com",
+      "password": "123",
+      "role": "member"
     },
     {
-      "id": "346f",
-      "fullName": "Mai Sơn Việt",
-      "email": "thaiphong0999@gmail.com",
-      "password": "123456"
+      "id": "5",
+      "fullName": "Hà Phạm",
+      "email": "hapham@gmail.com",
+      "password": "123",
+      "role": "Project owner"
     }
   ],
   "tasks": [
@@ -47,7 +50,7 @@
     },
     {
       "id": "3",
-      "taskName": "Thiết kế giao diện trang chủ",
+      "taskName": "Thiết kế giao diện trang chủ (Ecom)",
       "assigneeId": 2,
       "projectId": 1,
       "assignDate": "2025-03-27",
@@ -58,7 +61,7 @@
     },
     {
       "id": "e23f",
-      "taskName": "ve",
+      "taskName": "Viết API Gateway (Ecom)",
       "assigneeId": 1,
       "status": "To do",
       "assignDate": "2025-10-20",
@@ -66,6 +69,61 @@
       "priority": "Trung bình",
       "progress": "Có rủi ro",
       "projectId": 1
+    },
+    {
+      "id": "4",
+      "taskName": "Nghiên cứu đối thủ (Mobile App)",
+      "assigneeId": 2,
+      "projectId": 2,
+      "assignDate": "2025-04-01",
+      "dueDate": "2025-04-05",
+      "priority": "Thấp",
+      "progress": "Đúng tiến độ",
+      "status": "Done"
+    },
+    {
+      "id": "5",
+      "taskName": "Thiết kế Wireframe (Mobile App)",
+      "assigneeId": 3,
+      "projectId": 2,
+      "assignDate": "2025-04-06",
+      "dueDate": "2025-04-10",
+      "priority": "Cao",
+      "progress": "Đang tiến độ",
+      "status": "In Progress"
+    },
+    {
+      "id": "6",
+      "taskName": "Chạy quảng cáo (Marketing)",
+      "assigneeId": 4,
+      "projectId": 3,
+      "assignDate": "2025-05-01",
+      "dueDate": "2025-05-10",
+      "priority": "Cao",
+      "progress": "Đang tiến độ",
+      "status": "In Progress"
+    },
+    {
+      "id": "7",
+      "taskName": "Viết bài SEO (Marketing)",
+      "assigneeId": 5,
+      "projectId": 3,
+      "assignDate": "2025-05-02",
+      "dueDate": "2025-05-07",
+      "priority": "Trung bình",
+      "progress": "Có rủi ro",
+      "status": "Pending"
+    },
+    {
+      "id": "8",
+      "taskName": "Phân tích dữ liệu (Data)",
+      "assigneeId": 1,
+      "projectId": 4,
+      "assignDate": "2025-06-01",
+      "dueDate": "2025-06-10",
+      "priority": "Cao",
+      "progress": "Đúng tiến độ",
+      "status": "To do"
     }
   ],
   "projects": [
@@ -82,6 +140,10 @@
         {
           "userId": 2,
           "role": "Frontend developer"
+        },
+        {
+          "userId": 3,
+          "role": "Backend developer"
         }
       ]
     },
@@ -93,6 +155,138 @@
       "members": [
         {
           "userId": 2,
+          "role": "Project owner"
+        },
+        {
+          "userId": 3,
+          "role": "UI/UX Designer"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "projectName": "Chiến dịch Marketing Quý 2",
+      "description": "Tăng nhận diện thương hiệu và thu hút khách hàng mới.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231713/samples/landscapes/nature-mountains.jpg",
+      "members": [
+        {
+          "userId": 5,
+          "role": "Project owner"
+        },
+        {
+          "userId": 4,
+          "role": "Marketing Executive"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "projectName": "Hệ thống Báo cáo Dữ liệu (BI)",
+      "description": "Xây dựng dashboard BI nội bộ.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231712/samples/landscapes/beach-boat.jpg",
+      "members": [
+        {
+          "userId": 1,
+          "role": "Project owner"
+        },
+        {
+          "userId": 4,
+          "role": "Data Analyst"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "projectName": "Nâng cấp Hạ tầng Server",
+      "description": "Chuyển đổi sang kiến trúc microservices.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231710/samples/people/boy-snow-hoodie.jpg",
+      "members": [
+        {
+          "userId": 1,
+          "role": "Project owner"
+        },
+        {
+          "userId": 3,
+          "role": "DevOps Engineer"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "projectName": "Tối ưu hóa SEO Website",
+      "description": "Đẩy top 10 các từ khóa chính.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231710/samples/people/bicycle.jpg",
+      "members": [
+        {
+          "userId": 1,
+          "role": "Project owner"
+        },
+        {
+          "userId": 5,
+          "role": "SEO Specialist"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "projectName": "Ra mắt sản phẩm mới (Product X)",
+      "description": "Lên kế hoạch và thực thi ra mắt sản phẩm X.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231709/samples/food/fish-vegetables.jpg",
+      "members": [
+        {
+          "userId": 1,
+          "role": "Project owner"
+        },
+        {
+          "userId": 2,
+          "role": "Product Manager"
+        },
+        {
+          "userId": 4,
+          "role": "Marketing"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "projectName": "Dự án Tái cấu trúc (Internal)",
+      "description": "Sắp xếp lại cơ cấu phòng ban.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231708/samples/food/pot-mussels.jpg",
+      "members": [
+        {
+          "userId": 5,
+          "role": "Project owner"
+        },
+        {
+          "userId": 1,
+          "role": "Member"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "projectName": "Xây dựng Ứng dụng Nội bộ",
+      "description": "Ứng dụng chấm công và quản lý phép.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231707/samples/food/spices.jpg",
+      "members": [
+        {
+          "userId": 1,
+          "role": "Project owner"
+        },
+        {
+          "userId": 3,
+          "role": "Developer"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "projectName": "Dự án R&D Blockchain",
+      "description": "Nghiên cứu ứng dụng Blockchain vào sản phẩm.",
+      "image": "https://res.cloudinary.com/des6fg9th/image/upload/v1689231706/samples/food/dessert.jpg",
+      "members": [
+        {
+          "userId": 1,
           "role": "Project owner"
         }
       ]

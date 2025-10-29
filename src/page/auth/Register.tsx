@@ -1,3 +1,4 @@
+// src/page/auth/Register.tsx
 import React, { useState } from "react";
 import "./register.css";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +13,6 @@ function Register() {
   });
 
   const [errors, setErrors] = useState({});
-  // 1. Thay đổi state để có thể chứa JSX
   const [success, setSuccess] = useState<React.ReactNode>(""); 
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ function Register() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: "" })); 
-    setSuccess(""); // Xóa thông báo thành công
+    setSuccess(""); 
   };
 
   const isValidEmail = (email) => {
@@ -71,7 +71,11 @@ function Register() {
         password: formData.password,
       };
 
-      await axios.post("http://localhost:3001/users", newUser);
+      // --- THAY ĐỔI: LƯU ID NGƯỜI DÙNG MỚI VÀO LOCALSTORAGE ---
+      const response = await axios.post("http://localhost:3001/users", newUser);
+      localStorage.setItem('loggedInUserId', response.data.id); // Giả sử API trả về user mới
+      // ----------------------------------------------------
+
       setSuccess(
         <>
           <img 
@@ -82,7 +86,6 @@ function Register() {
         </>
       );
 
-      // Chờ 2 giây rồi chuyển hướng
       setTimeout(() => {
         navigate("/project-manager");
       }, 2000);

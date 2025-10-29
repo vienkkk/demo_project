@@ -1,3 +1,4 @@
+// src/page/auth/Login.tsx
 import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
@@ -52,8 +53,10 @@ function Login() {
       );
 
       if (foundUser) {
-        // --- 2. THAY ĐỔI Ở ĐÂY ---
-        // Hiển thị GIF thay vì text
+        // --- THAY ĐỔI: LƯU USER ID VÀO LOCALSTORAGE ---
+        localStorage.setItem('loggedInUserId', foundUser.id);
+        // ---------------------------------------------
+
         setToast(
           <>
             <img 
@@ -63,7 +66,6 @@ function Login() {
             />
           </>
         );
-        // --- KẾT THÚC THAY ĐỔI ---
 
         setTimeout(() => {
           setToast("");
@@ -123,7 +125,6 @@ function Login() {
         </p>
       </form>
 
-      {/* 3. Vẫn render state 'toast' (giờ là JSX) */}
       {toast && <div className="toast">{toast}</div>}
     </div>
   );
