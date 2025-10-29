@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../style/ProjectStyles.module.css'; // Import styles
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate()
+  const isLogin = localStorage.getItem('checkLogin')
+  
   return (
     <div className={styles.headerBar}>
       <h2>Quan li du an nhom</h2>

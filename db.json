@@ -4,13 +4,15 @@
       "id": "1",
       "fullName": "An Nguyễn",
       "email": "nguyenquangan@gmail.com",
-      "password": "123"
+      "password": "123",
+      "role":"Project owner"
     },
     {
       "id": "2",
       "fullName": "Bách Nguyễn",
       "email": "bachnguyen@gmail.com",
-      "password": "123"
+      "password": "123",
+      "role":"member"
     },
     {
       "id": "a215",
