@@ -302,7 +302,7 @@ const FormAddTask: React.FC<FormAddTaskProps> = ({ onClose, onSave, taskToEdit, 
           </div>
 
           <div style={styles.modalFooter}>
-            <button typeG="button" style={{ ...styles.button, ...styles.buttonSecondary }} onClick={onClose}>Huỷ</button>
+            <button type="button" style={{ ...styles.button, ...styles.buttonSecondary }} onClick={onClose}>Huỷ</button>
             <button type="submit" style={{ ...styles.button, ...styles.buttonPrimary }}>Lưu</button>
           </div>
         </form>

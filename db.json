@@ -55,15 +55,15 @@
       "status": "In Progress"
     },
     {
-      "id": "3",
       "taskName": "Thiết kế giao diện trang chủ (Ecom)",
-      "assigneeId": 2,
-      "projectId": 1,
+      "assigneeId": 3,
+      "status": "To do",
       "assignDate": "2025-03-27",
       "dueDate": "2025-03-29",
       "priority": "Cao",
       "progress": "Trễ hạn",
-      "status": "To do"
+      "projectId": 1,
+      "id": "3"
     },
     {
       "id": "e23f",
@@ -177,20 +177,8 @@
           "role": "Project owner"
         },
         {
-          "userId": 2,
-          "role": "Frontend developer"
-        },
-        {
           "userId": 3,
-          "role": "Backend developer"
-        },
-        {
-          "userId": 4,
-          "role": "Testter"
-        },
-        {
-          "userId": 5,
-          "role": "Tester"
+          "role": "Test"
         }
       ]
     },
