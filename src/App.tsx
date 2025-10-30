@@ -12,6 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Navigate to="/project-manager" />} />
+        <Route path="*" element={<Navigate to="/project-manager" />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/project-manager" element={<ProjectManagerGroup />} />

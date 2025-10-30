@@ -53,10 +53,7 @@ function Login() {
       );
 
       if (foundUser) {
-        // --- THAY ĐỔI: LƯU USER ID VÀO LOCALSTORAGE ---
         localStorage.setItem('loggedInUserId', foundUser.id);
-        // ---------------------------------------------
-
         setToast(
           <>
             <img 

@@ -34,6 +34,12 @@
       "email": "hapham@gmail.com",
       "password": "123",
       "role": "Project owner"
+    },
+    {
+      "id": "3946",
+      "fullName": "Mai Sơn Việt",
+      "email": "thaiphong099@gmail.com",
+      "password": "12345678"
     }
   ],
   "tasks": [
@@ -124,6 +130,39 @@
       "priority": "Cao",
       "progress": "Đúng tiến độ",
       "status": "To do"
+    },
+    {
+      "id": "9fa6",
+      "taskName": "Thiết kế giao diện trang chủ",
+      "assigneeId": 4,
+      "status": "Pending",
+      "assignDate": "2025-03-27",
+      "dueDate": "2025-03-29",
+      "priority": "Cao",
+      "progress": "Có rủi ro",
+      "projectId": 1
+    },
+    {
+      "id": "c818",
+      "taskName": "Thiết kế giao diện trang chủ",
+      "assigneeId": 1,
+      "status": "To do",
+      "assignDate": "2025-03-27",
+      "dueDate": "2025-03-29",
+      "priority": "Cao",
+      "progress": "Có rủi ro",
+      "projectId": 1
+    },
+    {
+      "id": "ae44",
+      "taskName": "Thiết kế giao diện trang chủ",
+      "assigneeId": 5,
+      "status": "Pending",
+      "assignDate": "2025-03-27",
+      "dueDate": "2025-03-29",
+      "priority": "Trung bình",
+      "progress": "Trễ hạn",
+      "projectId": 1
     }
   ],
   "projects": [
@@ -144,6 +183,14 @@
         {
           "userId": 3,
           "role": "Backend developer"
+        },
+        {
+          "userId": 4,
+          "role": "Testter"
+        },
+        {
+          "userId": 5,
+          "role": "Tester"
         }
       ]
     },

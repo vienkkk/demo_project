@@ -22,7 +22,6 @@ const ProjectDetail = () => {
         setError(null);
         setProject(null);
         setTasks([]);
-
         const [projectRes, tasksRes, usersRes] = await Promise.all([
           axios.get(`http://localhost:3001/projects/${projectId}`),
           axios.get(`http://localhost:3001/tasks?projectId=${projectId}`),
