@@ -1,6 +1,6 @@
 // src/page/auth/Register.tsx
 import React, { useState } from "react";
-import "./register.css";
+import "../../component/style/register.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; 
 
